@@ -14,6 +14,8 @@
 		9E56FE2021069071008FE252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E56FE1E21069071008FE252 /* LaunchScreen.storyboard */; };
 		9E56FE2B21069072008FE252 /* names_to_facesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56FE2A21069072008FE252 /* names_to_facesTests.swift */; };
 		9E56FE3621069072008FE252 /* names_to_facesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56FE3521069072008FE252 /* names_to_facesUITests.swift */; };
+		9E56FE452107D382008FE252 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56FE432107D382008FE252 /* PersonCollectionViewCell.swift */; };
+		9E56FE462107D382008FE252 /* PersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E56FE442107D382008FE252 /* PersonCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9E56FE3121069072008FE252 /* names-to-facesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "names-to-facesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E56FE3521069072008FE252 /* names_to_facesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = names_to_facesUITests.swift; sourceTree = "<group>"; };
 		9E56FE3721069072008FE252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E56FE432107D382008FE252 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E56FE442107D382008FE252 /* PersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,9 @@
 			children = (
 				9E56FE1521069070008FE252 /* AppDelegate.swift */,
 				9E56FE1721069070008FE252 /* ViewController.swift */,
+				9E56FE432107D382008FE252 /* PersonCollectionViewCell.swift */,
 				9E56FE1921069070008FE252 /* Main.storyboard */,
+				9E56FE442107D382008FE252 /* PersonCollectionViewCell.xib */,
 				9E56FE1C21069071008FE252 /* Assets.xcassets */,
 				9E56FE1E21069071008FE252 /* LaunchScreen.storyboard */,
 				9E56FE2121069071008FE252 /* Info.plist */,
@@ -232,6 +238,7 @@
 				9E56FE2021069071008FE252 /* LaunchScreen.storyboard in Resources */,
 				9E56FE1D21069071008FE252 /* Assets.xcassets in Resources */,
 				9E56FE1B21069070008FE252 /* Main.storyboard in Resources */,
+				9E56FE462107D382008FE252 /* PersonCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E56FE1821069070008FE252 /* ViewController.swift in Sources */,
+				9E56FE452107D382008FE252 /* PersonCollectionViewCell.swift in Sources */,
 				9E56FE1621069070008FE252 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
