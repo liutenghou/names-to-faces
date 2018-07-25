@@ -16,6 +16,7 @@
 		9E56FE3621069072008FE252 /* names_to_facesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56FE3521069072008FE252 /* names_to_facesUITests.swift */; };
 		9E56FE452107D382008FE252 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56FE432107D382008FE252 /* PersonCollectionViewCell.swift */; };
 		9E56FE462107D382008FE252 /* PersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E56FE442107D382008FE252 /* PersonCollectionViewCell.xib */; };
+		9E56FE48210929EF008FE252 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56FE47210929EF008FE252 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9E56FE3721069072008FE252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E56FE432107D382008FE252 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E56FE442107D382008FE252 /* PersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCollectionViewCell.xib; sourceTree = "<group>"; };
+		9E56FE47210929EF008FE252 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				9E56FE1521069070008FE252 /* AppDelegate.swift */,
 				9E56FE1721069070008FE252 /* ViewController.swift */,
+				9E56FE47210929EF008FE252 /* Person.swift */,
 				9E56FE432107D382008FE252 /* PersonCollectionViewCell.swift */,
 				9E56FE1921069070008FE252 /* Main.storyboard */,
 				9E56FE442107D382008FE252 /* PersonCollectionViewCell.xib */,
@@ -265,6 +268,7 @@
 			files = (
 				9E56FE1821069070008FE252 /* ViewController.swift in Sources */,
 				9E56FE452107D382008FE252 /* PersonCollectionViewCell.swift in Sources */,
+				9E56FE48210929EF008FE252 /* Person.swift in Sources */,
 				9E56FE1621069070008FE252 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
