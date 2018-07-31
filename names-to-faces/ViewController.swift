@@ -54,11 +54,43 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     
     //MARK: collection view methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return people.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:PersonCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Person", for: indexPath) as! PersonCollectionViewCell
+        
+        //pull out the person from the array
+        let person = people[indexPath.item]
+        //set the name label correctly
+        cell.name.text = person.name
+        //set the image from filename
+        let imagePath = getDocumentsDirectory().appendingPathComponent(person.image)
+        cell.imageView.image = UIImage(contentsOfFile: imagePath.path)
+        
+        //some cell prettying
+        cell.imageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+        cell.imageView.layer.borderWidth = 2
+        cell.imageView.layer.cornerRadius = 3
+        cell.layer.cornerRadius = 7
+        
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //show alert controller when user taps cell, add name
+        
+        let person = people[indexPath.item]
+        
+        let ac = UIAlertController(title: "Rename Person", message: nil, preferredStyle: .alert)
+        ac.addTextField(configurationHandler: nil)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "OK", style: .default) { [unowned self, ac] _ in
+            let newName = ac.textFields![0]
+            person.name = newName.text!
+            self.collectionView?.reloadData()
+        })
+        
+        present(ac, animated: true)
     }
 }
