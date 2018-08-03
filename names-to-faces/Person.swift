@@ -11,10 +11,10 @@ import UIKit
 class Person: NSObject {
     
     var name: String
-    var image: String
+    var imageName: String
 
-    init(name: String, image: String){
+    init(name: String, imageName: String){
         self.name = name
-        self.image = image
+        self.imageName = imageName
     }
 }

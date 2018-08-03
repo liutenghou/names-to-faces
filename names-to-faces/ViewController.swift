@@ -14,9 +14,10 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
     }
     
+    //selector method after clicking add button
     @objc func addNewPerson() {
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
@@ -37,7 +38,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
             try? jpegData.write(to: imagePath)
         }
         
-        let person = Person(name: "Unknown", image: imageName)
+        let person = Person(name: "Unknown", imageName: imageName)
         people.append(person)
         collectionView?.reloadData()
         
@@ -65,7 +66,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         //set the name label correctly
         cell.name.text = person.name
         //set the image from filename
-        let imagePath = getDocumentsDirectory().appendingPathComponent(person.image)
+        let imagePath = getDocumentsDirectory().appendingPathComponent(person.imageName)
         cell.imageView.image = UIImage(contentsOfFile: imagePath.path)
         
         //some cell prettying
@@ -82,7 +83,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         
         let person = people[indexPath.item]
         
-        let ac = UIAlertController(title: "Rename Person", message: nil, preferredStyle: .alert)
+        let ac = UIAlertController(title: "Rename", message: nil, preferredStyle: .alert)
         ac.addTextField(configurationHandler: nil)
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         ac.addAction(UIAlertAction(title: "OK", style: .default) { [unowned self, ac] _ in
