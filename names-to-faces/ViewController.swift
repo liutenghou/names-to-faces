@@ -15,6 +15,12 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        
+        //load saved data
+        let defaults = UserDefaults.standard
+        if let savedPeople = defaults.object(forKey: "people") as? Data{
+            people = NSKeyedUnarchiver.unarchiveObject(with: savedPeople) as! [Person]
+        }
     }
     
     //selector method after clicking add button
@@ -41,6 +47,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         let person = Person(name: "Unknown", imageName: imageName)
         people.append(person)
         collectionView?.reloadData()
+        save()
         
         dismiss(animated: true, completion: nil)
         
@@ -90,8 +97,17 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
             let newName = ac.textFields![0]
             person.name = newName.text!
             self.collectionView?.reloadData()
+            self.save()
         })
         
         present(ac, animated: true)
+    }
+    
+    //MARK: saving
+    func save(){
+        let savedData = NSKeyedArchiver.archivedData(withRootObject: people)
+        let defaults = UserDefaults.standard
+        
+        defaults.set(savedData, forKey: "people")
     }
 }
